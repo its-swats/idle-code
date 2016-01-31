@@ -4,7 +4,7 @@
   "description": "Create rad code, upgrade your rig, create rad code faster",
   "main": "index.jsx",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js 'test/**/*.@(js|jsx)"
+    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js 'test/**/*.@(js|jsx)'"
   },
   "author": "Shawn Watson",
   "license": "ISC",
