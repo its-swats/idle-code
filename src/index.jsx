@@ -11,7 +11,7 @@ import {MainContainer} from './components/main'
 const store = createStore(reducer);
 store.dispatch(setState())
 
-gameLoop()
+gameLoop();
 function gameLoop(){
   var currentState = store.getState();
   setTimeout(function(){

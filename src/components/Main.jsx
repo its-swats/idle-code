@@ -1,5 +1,6 @@
-import React from 'react'
-import {connect} from 'react-redux' 
+import React from 'react';
+import Shop from './Shop';
+import {connect} from 'react-redux' ;
 
 export const Main = React.createClass({
   render: function() {
@@ -8,6 +9,7 @@ export const Main = React.createClass({
       <p>{this.props.code}</p>
       <p>{this.props.player['codeSpent']}</p>
       <p>{this.props.player.totalSpeed}</p>
+      <Shop upgrades={this.props.upgrades} />
       </div>
     )
   }
@@ -17,7 +19,7 @@ function mapStateToProps(state) {
   return {
     code: state.get('code'),
     player: state.getIn(['player']).toObject(),
-    upgrades: state.getIn(['upgrades']).toObject
+    upgrades: state.getIn(['upgrades']).toObject()
   };
 }
 
