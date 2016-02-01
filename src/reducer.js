@@ -1,8 +1,8 @@
 import {Map, List} from 'immutable';
 import {calculateTick} from './tick_events';
-import {initialState} from './initial_state';
+import {newGameState} from './initial_state';
 
-export default function(state = initialState, action) {
+export default function(state = newGameState, action) {
   switch (action.type) {
     case 'TICK':
       return calculateTick(state, action)
@@ -10,6 +10,6 @@ export default function(state = initialState, action) {
     case 'UPDATE_PLAYER':
       return state.mergeDeep(action.state);
     case 'SET_STATE':
-      return state;
+      return (!state ? newGameState : state)
   }
 }
