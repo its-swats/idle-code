@@ -2,7 +2,7 @@
   "name": "idle_code",
   "version": "1.0.0",
   "description": "Create rad code, upgrade your rig, create rad code faster",
-  "main": "index.jsx",
+  "main": "index.js",
   "scripts": {
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js 'test/**/*.@(js|jsx)'"
   },
