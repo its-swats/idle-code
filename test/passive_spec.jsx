@@ -57,13 +57,13 @@ describe('reducer', () => {
       const nextState = reducer(initialState, action)
       expect(nextState).to.equal(newGameState);
     });
-  });
+  
+    it('returns the current state if it exists', () => {
+      const initialState = fromJS({player: {codePerTick: 7, maxCode: 10}});
+      const action = setState(initialState);
+      const nextState = reducer(initialState, action);
+      expect(nextState).to.equal(initialState);
+    });
 
-  it('returns the current state if it exists', () => {
-    const initialState = fromJS({player: {codePerTick: 7, maxCode: 10}});
-    const action = setState(initialState);
-    const nextState = reducer(initialState, action);
-    expect(nextState).to.equal(initialState);
   });
-
 });

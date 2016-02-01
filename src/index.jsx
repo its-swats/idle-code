@@ -1,7 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import reducer from './reducer';
-import {setState} from './action_creators';
+import {fromJS} from 'immutable';
+import {createStore} from 'redux'
+import {setState, updatePlayer} from './action_creators';
+import {Provider} from 'react-redux';
+import {MainContainer} from './components/main'
+
+
+const store = createStore(reducer);
+store.dispatch(setState(null))
 
 
 // function decreaseSpeed() {
@@ -12,8 +20,8 @@ import {setState} from './action_creators';
 // startGame();
 // export function startGame() {
 //   setInterval(function(){
-    
+
 //   },state.getIn(['player', 'totalSpeed']))
 // }
 
-// ReactDOM.render(<Test />, document.getElementById('app'));
+ReactDOM.render(<Provider store={store}><MainContainer /></Provider>, document.getElementById('app'));
