@@ -6,11 +6,11 @@ export const Main = React.createClass({
   render: function() {
     return (
       <div><h1>Idle Coder</h1>
-      <p>{this.props.code}</p>
-      <p>{this.props.player['codeSpent']}</p>
+      <p className='code'>{this.props.code}</p>
+      <p>{this.props.player.codeSpent}</p>
       <p>{this.props.player.totalSpeed}</p>
-      <Shop upgrades={this.props.upgrades.hardware} />
-      <Shop upgrades={this.props.upgrades.software} />
+      <Shop code={this.props.code} upgrades={this.props.upgrades.hardware} />
+      <Shop code={this.props.code} upgrades={this.props.upgrades.software} />
       </div>
     )
   }

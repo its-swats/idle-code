@@ -1,6 +1,7 @@
 export const upgrades = {
   "hardware": {
     "item1": {
+      "id": "hard_0",
       "name": "More Ram",
       "description": "You program yourself some more RAM, somehow",
       "effects": "Store more code",
@@ -9,6 +10,7 @@ export const upgrades = {
       "owned": "0"
     },
     "item2": {
+      "id": "hard_1",
       "name": "Faster processor",
       "description": "You code yourself a really fast processor, in 3d",
       "effects": "Get code faster",
@@ -19,6 +21,7 @@ export const upgrades = {
   }, 
   "software": {
     "item1" : {
+      "id": "soft_0",
       "name": "SublimeText",
       "description": "It's version 1.0",
       "effects": "Increase code speed",
