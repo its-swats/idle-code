@@ -1,7 +1,9 @@
 import {List, Map, fromJS} from 'immutable';
 import {expect} from 'chai';
 import reducer from '../src/reducer';
-import {tick, updatePlayer} from '../src/action_creators';
+import {tick, updatePlayer, setState} from '../src/action_creators';
+import {newGameState} from '../src/initial_state';
+
 
 
 describe('reducer', () => {
@@ -21,10 +23,7 @@ describe('reducer', () => {
       const expectedState = fromJS({player: {codePerTick: 15, maxCode: 10}, code: 10});
       expect(nextState).to.equal(expectedState);
     });
-
-    // it('triggers at correct intervals', () => {
-      
-    // });
+    it('triggers at correct intervals')
   });
 
   describe('action UPGRADE', () => {
@@ -50,4 +49,21 @@ describe('reducer', () => {
       expect(nextState).to.equal(expectedState);    
     });
   });
-})
+
+  describe('action SET_STATE', () => {
+    it('creates an initialState if one does not exist', () => {
+      const initialState = null;
+      const action = setState(initialState);
+      const nextState = reducer(initialState, action)
+      expect(nextState).to.equal(newGameState);
+    });
+  });
+
+  it('returns the current state if it exists', () => {
+    const initialState = fromJS({player: {codePerTick: 7, maxCode: 10}});
+    const action = setState(initialState);
+    const nextState = reducer(initialState, action);
+    expect(nextState).to.equal(initialState);
+  });
+
+});

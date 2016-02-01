@@ -1,15 +1,7 @@
-import {Map, Line, fromJS} from 'immutable';
+import {fromJS} from 'immutable';
 
-export const initialState = fromJS({
-  upgrades: {},
-  player: {codeSpent: 0, maxCode: 10, totalSpeed: 1000, codePerTick: 1},
+export const newGameState = fromJS({
+  upgrades: {hardware: {}, software: {}},
+  player: {codeSpent: 0, maxCode: 10, totalSpeed: 5000, codePerTick: 1},
   code: 0
 })
-
-/*
-upgrades: {hardware: {}, software{}},
-player: {maxCode: x, totalSpeed:, codePerTick:, codeSpent:},
-code: x
-
-
-*/
