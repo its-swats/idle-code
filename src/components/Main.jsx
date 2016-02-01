@@ -9,7 +9,8 @@ export const Main = React.createClass({
       <p>{this.props.code}</p>
       <p>{this.props.player['codeSpent']}</p>
       <p>{this.props.player.totalSpeed}</p>
-      <Shop upgrades={this.props.upgrades} />
+      <Shop upgrades={this.props.upgrades.hardware} />
+      <Shop upgrades={this.props.upgrades.software} />
       </div>
     )
   }

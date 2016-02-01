@@ -1,8 +1,8 @@
 import React from 'react';
 
 export default React.createClass({
-  printHardware: function() {
-    return this.props.upgrades.hardware.map(function(item) {
+  printStore: function() {
+    return this.props.upgrades.map(function(item) {
       
       return (
         <div key={item.get('name')}>
@@ -18,7 +18,7 @@ export default React.createClass({
 
   render: function() {
     return (
-      <div>{this.printHardware()}</div>
+      <div>{this.printStore()}</div>
     )
   }
 })
