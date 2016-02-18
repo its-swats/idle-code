@@ -6,6 +6,7 @@ export const upgrades = {
       "description": "You program yourself some more RAM, somehow",
       "effects": "Store more code",
       "cost": 1,
+      "increment": 10,
       "increase": ["maxCode", +5],
       "owned": 0
     },
@@ -15,6 +16,7 @@ export const upgrades = {
       "description": "You code yourself a really fast processor, in 3d",
       "effects": "Get code faster",
       "cost": 5,
+      "increment": 15,
       "increase": ["totalSpeed", -50],
       "owned": 0
     },
@@ -23,7 +25,8 @@ export const upgrades = {
       "name": "SublimeText",
       "description": "It's version 1.0",
       "effects": "Increase code speed",
-      "cost": 5,
+      "cost": 10,
+      "increment": 1,
       "increase": ["codePerTick", +5],
       "owned": 0
     }

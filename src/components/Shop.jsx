@@ -8,17 +8,33 @@ export default React.createClass({
     store.dispatch(purchase(event.target.id));
   },
 
+  makeButton: function(item) {
+    if (this.props.state.code >= item.get('cost')) {
+      return (<button className='btn btn-lg btn-primary btn-block' id={item.get('id')} onClick={this.purchaseItem}>Make it!</button>);
+    }else{
+      return (<button className='btn btn-lg btn-primary btn-block' disabled="disabled">Not Enough Code</button>);
+    };
+  },
+
   printStore: function() {
     const self = this;
     return this.props.state.upgrades.get('purchasables').map(function(item) {
       return (
-        <div key={item.get('id')}>
-          <p>{item.get('name')}</p>
-          <p>{item.get('description')}</p>
-          <p>{item.get('effects')}</p>
-          <p>{item.get('cost')}</p>
-          <p>{item.get('owned')}</p>
-          <h3><button id={item.get('id')} onClick={self.purchaseItem}>Make it!</button></h3>
+        <div className='shop-box col-xs-12 col-sm-6 col-lg-4 well' key={item.get('id')}>
+          <div className='row'>
+            <div className='item-name col-xs-10'>
+              {item.get('name')}
+            </div>
+            <div className='item-cost col-xs-2'>
+              {item.get('cost')}cd
+            </div>
+          </div>
+          <div className='row'>
+            <div className='item-desc col-xs-12'>
+              {item.get('description')}
+            </div>
+          </div>
+         {self.makeButton(item)}
         </div>
       )
     })
@@ -26,7 +42,7 @@ export default React.createClass({
 
   render: function() {
     return (
-      <div>{this.printStore()}</div>
+      <div className='row' >{this.printStore()}</div>
     )
   }
 })
