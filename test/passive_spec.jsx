@@ -1,7 +1,7 @@
 import {List, Map, fromJS} from 'immutable';
 import {expect} from 'chai';
 import reducer from '../src/reducer';
-import {tick, updatePlayer, setState} from '../src/action_creators';
+import {tick, updatePlayer, setState, purchase} from '../src/action_creators';
 import {newGameState} from '../src/initial_state';
 
 
@@ -23,11 +23,6 @@ describe('reducer', () => {
       const expectedState = fromJS({player: {codePerTick: 15, maxCode: 10}, code: 10});
       expect(nextState).to.equal(expectedState);
     });
-    it('triggers at correct intervals')
-  });
-
-  describe('action UPGRADE', () => {
-
   });
 
   describe('action UPDATE_PLAYER', () => {
@@ -64,6 +59,27 @@ describe('reducer', () => {
       const nextState = reducer(initialState, action);
       expect(nextState).to.equal(initialState);
     });
+  });
+// Massive refactoring needed here
+  describe('action PURCHASE', () => {
+    it('adds increments the "owned" counter', () => {
+      const action = setState(null);
+      const purchaseAction = purchase("hard_0");
+      const initialState = reducer(null, action);
+      const tickAction = tick(initialState);
+      let nextState = reducer(initialState, tickAction);
+      nextState = reducer(nextState, purchaseAction)
+      expect(nextState.getIn(['upgrades', 'purchasables', 'hard_0', 'owned'])).to.equal(1);
+    });
 
+    it('subtracts cost from player total', () => {
+      const action = setState(null);
+      const purchaseAction = purchase("hard_0");
+      const initialState = reducer(null, action);
+      const tickAction = tick(initialState);
+      let nextState = reducer(initialState, tickAction);
+      nextState = reducer(nextState, purchaseAction)
+      expect(nextState.get('code')).to.equal(0);
+    });
   });
 });
