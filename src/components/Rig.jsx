@@ -26,7 +26,7 @@ export default React.createClass({
 
 	render: function() {
 		return(
-			<div className=''>
+			<div>
 				{this.rigStats()}
 				{this.createRig()}
 			</div>
