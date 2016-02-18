@@ -6,7 +6,7 @@ export const upgrades = {
       "description": "You program yourself some more RAM, somehow",
       "effects": "Store more code",
       "cost": 1,
-      "increase": "maxCode = maxCode + 5",
+      "increase": ["maxCode", +5],
       "owned": 0
     },
     "hard_1": {
@@ -15,7 +15,7 @@ export const upgrades = {
       "description": "You code yourself a really fast processor, in 3d",
       "effects": "Get code faster",
       "cost": 5,
-      "increase": "totalTime = totalTime - 50",
+      "increase": ["totalSpeed", -50],
       "owned": 0
     },
     "soft_0" : {
@@ -24,7 +24,7 @@ export const upgrades = {
       "description": "It's version 1.0",
       "effects": "Increase code speed",
       "cost": 5,
-      "increase": "codePerTick = codePerTick + 5",
+      "increase": ["codePerTick", +5],
       "owned": 0
     }
   }
