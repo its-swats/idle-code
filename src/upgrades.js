@@ -2,19 +2,19 @@ export const upgrades = {
   "purchasables": {
     "hard_0": {
       "id": "hard_0",
-      "name": "More Ram",
-      "description": "You program yourself some more RAM, somehow",
-      "effects": "Store more code",
+      "name": "A Bigger Hard Drive",
+      "description": "A bigger hard drive lets you store more code. How you coded something physical, we'll never node. ",
+      "effects": "Increases code storage by 5 lines",
       "cost": 1,
-      "increment": 10,
+      "increment": 5,
       "increase": ["maxCode", +5],
       "owned": 0
     },
     "hard_1": {
       "id": "hard_1",
-      "name": "Faster processor",
-      "description": "You code yourself a really fast processor, in 3d",
-      "effects": "Get code faster",
+      "name": "An extra i7 Core",
+      "description": "An additional core causes your code to compile code quicker. ",
+      "effects": "Increases code speed",
       "cost": 5,
       "increment": 15,
       "increase": ["totalSpeed", -50],
@@ -22,7 +22,7 @@ export const upgrades = {
     },
     "soft_0" : {
       "id": "soft_0",
-      "name": "SublimeText",
+      "name": "A Word Processor",
       "description": "It's version 1.0",
       "effects": "Increase code speed",
       "cost": 10,
