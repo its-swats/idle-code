@@ -20,12 +20,12 @@ export default React.createClass({
     const self = this;
     return this.props.state.upgrades.get('purchasables').map(function(item) {
       return (
-        <div className='shop-box col-xs-12 col-sm-6 col-lg-4 well' key={item.get('id')}>
+        <div className='col-xs-12 col-sm-6 well' key={item.get('id')}>
           <div className='row'>
-            <div className='item-name col-xs-10'>
+            <div className='item-name col-sm-10 col-xs-12'>
               {item.get('name')}
             </div>
-            <div className='item-cost col-xs-2'>
+            <div className='item-cost col-sm-2 col-xs-12'>
               {item.get('cost')}cd
             </div>
           </div>
@@ -42,7 +42,7 @@ export default React.createClass({
 
   render: function() {
     return (
-      <div className='row' >{this.printStore()}</div>
+      <div>{this.printStore()}</div>
     )
   }
 })
