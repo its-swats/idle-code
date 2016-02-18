@@ -1,5 +1,6 @@
 import React from 'react';
 import Shop from './Shop';
+import Rig from './Rig';
 import {connect} from 'react-redux' ;
 
 export const Main = React.createClass({
@@ -14,11 +15,7 @@ export const Main = React.createClass({
       <div className='col-xs-12 col-sm-10 col-sm-offset-1 main'>
         <div className='well'>
           <h1 className='text-center'>Idle Coder</h1>
-          <ul className='list-inline text-center'>
-            <li className='code'>Lines of Code: {this.props.code}</li>
-            <li>Code/second: {this.codePerSec()}</li>
-            <li>Code Spent: {this.props.player.get('codeSpent')}</li>
-          </ul>
+          <Rig state={this.props}/>
           <Shop state={this.props}/>
         </div>
       </div>
