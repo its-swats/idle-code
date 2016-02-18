@@ -6,9 +6,9 @@ import {createStore} from 'redux'
 import {setState, updatePlayer, tick} from './action_creators';
 import {Provider} from 'react-redux';
 import {MainContainer} from './components/main'
-
+ 
 //Maybe try making the tick counter a method of Main? 
-const store = createStore(reducer);
+export const store = createStore(reducer);
 store.dispatch(setState())
 
 gameLoop();
@@ -21,3 +21,4 @@ function gameLoop(){
 }
 
 ReactDOM.render(<Provider store={store}><MainContainer /></Provider>, document.getElementById('app'));
+
