@@ -1,3 +1,16 @@
+* {
+	color: #C3FFD4;
+}
+
+body { 
+	background-color: #0D2321;
+ }
+
+.well { 
+	background-color:  #0B464C;
+	border: 1px solid #16816D;
+}
+
 .container-fluid {  
 	margin-top: 2em;
 }
