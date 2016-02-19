@@ -25,8 +25,8 @@ export default React.createClass({
             <div className='item-name col-sm-10 col-xs-12'>
               {item.get('name')}
             </div>
-            <div className='item-cost col-sm-2 col-xs-12'>
-              {item.get('cost')}cd
+            <div className='item-cost col-sm-2 col-xs-12 text-left'>
+              {item.get('cost')}ln
             </div>
           </div>
           <div className='row'>
@@ -42,7 +42,10 @@ export default React.createClass({
 
   render: function() {
     return (
-      <div>{this.printStore()}</div>
+      <div>
+        <h3 className='text-center'>The Shop</h3>
+        {this.printStore()}
+      </div>
     )
   }
 })

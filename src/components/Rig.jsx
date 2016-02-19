@@ -4,18 +4,18 @@ export default React.createClass({
 	createRig: function() {
 		return this.props.state.upgrades.get('purchasables').map(function(item){
 			if (item.get('owned') > 0) {
-				return (<p>{item.get('name')} - {item.get('owned')}</p>);
+				return (<p><strong>{item.get('name')}:</strong><br />{item.get('owned')}</p>);
 			}
 		})
 	},
 
 	rigStats: function() {
 		return(
-			<div>
-				<p>Codebank: {this.props.state.code} / {this.props.state.player.get('maxCode')}lns</p>
-				<p>Compile Speed: {this.compileSpeed(this.props.state.player.get('totalSpeed'))}</p>
-				<p>Code per Compile: {this.props.state.player.get('codePerTick')}</p>
-				<p>Total Code Used: {this.props.state.player.get('codeSpent')}</p>
+			<div className='well'>
+				<p><strong>Codebank:</strong><br />{this.props.state.code} / {this.props.state.player.get('maxCode')}lns</p>
+				<p><strong>Compile Speed:</strong><br /> {this.compileSpeed(this.props.state.player.get('totalSpeed'))}</p>
+				<p><strong>Code per Compile:</strong><br /> {this.props.state.player.get('codePerTick')} lines</p>
+				<p><strong>Total Code Used:</strong><br /> {this.props.state.player.get('codeSpent')} lines</p>
 			</div>
 		)
 	},
@@ -27,8 +27,13 @@ export default React.createClass({
 	render: function() {
 		return(
 			<div>
-				{this.rigStats()}
-				{this.createRig()}
+				<strong><h3 className='text-center'>Your Rig</h3></strong>
+				<div>
+					{this.rigStats()}
+					<div className='well'>
+						{this.createRig()}
+					</div>
+				</div>
 			</div>
 		)
 	}

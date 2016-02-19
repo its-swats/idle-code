@@ -33,12 +33,12 @@ export const upgrades = {
     "soft_1" : {
       "id": "soft_1",
       "name": "A Good Dinner",
-      "description": "You code up a nice chicken dinner, and then eat it. Gets the brain juices flowing.",
+      "description": "You code up a nice chicken dinner, and then eat it. Gets the brain juices flowing. Increases your ability to CODE hard.",
       "effects": "Increase code speed",
       "cost": 1,
-      "increment": 1,
-      "increase": ["codePerTick", +1],
-      "owned": 0
+      "increment": 5,
+      "increase": ["codePerTick", +0],
+      "owned": 1
     }
   }
 };
