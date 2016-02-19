@@ -1,14 +1,10 @@
 import React from 'react';
 import Shop from './Shop';
 import Rig from './Rig';
+import CodeButton from './CodeButton';
 import {connect} from 'react-redux' ;
 
 export const Main = React.createClass({
-  codePerSec: function () {
-  let second = this.props.player.get('totalSpeed') / 1000
-  let code = this.props.player.get('codePerTick')
-  return (Math.round(code / second * 10) / 10)
-  },
 
   render: function() {
     return (
@@ -22,11 +18,14 @@ export const Main = React.createClass({
           <div className='col-xs-12 col-sm-3 rig'>
             <div className='row'>
               <div className='well col-sm-11'>
+                <CodeButton state={this.props}/>
+              </div>
+              <div className='well col-sm-11'>
                 <Rig state={this.props}/>
               </div>
             </div>
             <div className='row'>
-              
+
             </div>
           </div>
           <div className='shop col-xs-12 col-sm-9 well'>
