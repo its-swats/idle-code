@@ -42,7 +42,10 @@ export default React.createClass({
 
   render: function() {
     return (
-      <div>{this.printStore()}</div>
+      <div>
+        <h3 className='text-center'>The Shop</h3>
+        {this.printStore()}
+      </div>
     )
   }
 })
